@@ -1,0 +1,41 @@
+﻿@using UdemyMVC5Proje.Models.EntitiFramework;
+@model  List<TBLOgrenci>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>ÖĞRENCİ ID</td>
+        <td>ÖĞRENCİ AD</td>
+        <td>ÖĞRENCİ SOYAD</td>
+        <td>ÖĞRENCİ TEL</td>
+        <td>ÖĞRENCİ FOTO</td>
+        <td>ÖĞRENCİ CİNSİYET</td>
+        <td>ÖĞRENCİ KLÜP</td>
+        <td>İŞLEMLER</td>
+
+    </tr>
+    <tbody>
+        @foreach (var studnt in Model)
+        {
+            <tr>
+                <td>@studnt.OGRENCIID</td>
+                <td>@studnt.OGRAD</td>
+                <td>@studnt.OGRSOYAD</td>
+                <td>@studnt.OGRTEL</td>
+                <td>@studnt.OGRFOTO</td>
+                <td>@studnt.OGRCINSIYET</td>
+                <td>@studnt.OGRKULUP</td>
+                <td>
+                    <a href="/Ogrenci/Sil/ @studnt.OGRENCIID" class="btn btn-danger">Sil</a>
+                    <a href="/Ogrenci/OgrenciGetir/ @studnt.OGRENCIID" class="btn btn-primary">Güncelle</a>
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Ogrenci/OgrEkle" class="btn btn-info">Yeni Öğrenci Ekle</a>

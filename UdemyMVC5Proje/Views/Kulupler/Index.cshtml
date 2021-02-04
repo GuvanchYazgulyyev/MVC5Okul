@@ -1,0 +1,32 @@
+﻿@using UdemyMVC5Proje.Models.EntitiFramework;
+@model List<TBLKulup>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <td>KÜLÜP ID</td>
+        <td>KÜLÜP AD</td>
+        <td>KÜLÜP KONTENJAN</td>
+        <td>İŞLEMLER</td>
+    </tr>
+    <tbody>
+        @foreach (var klp in Model)
+        {
+            <tr>
+                <td>@klp.KULUPID</td>
+                <td>@klp.KULUPAD</td>
+                <td>@klp.KULUPKONTENJAN</td>
+                <td>
+                    <a href="/Kulupler/Sil/ @klp.KULUPID" class="btn btn-danger">Sil</a>
+                    <a href="/Kulupler/KlupGetir/ @klp.KULUPID" class="btn btn-primary">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Kulupler/KlupEkle" class="btn btn-info">Yeni Klüp Ekle</a>
+
+

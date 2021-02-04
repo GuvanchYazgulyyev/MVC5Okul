@@ -1,0 +1,19 @@
+﻿@model UdemyMVC5Proje.Models.EntitiFramework.TBLDersler
+@{
+    ViewBag.Title = "DersGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Default", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(a=>a.DERSAD)
+        @Html.TextBoxFor(a=>a.DERSAD, new { @class="form-control"})
+    </div>
+    @Html.HiddenFor(a=>a.DERSID)
+
+    <div style="margin-top:15px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+}
+

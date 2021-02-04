@@ -1,0 +1,44 @@
+﻿@using UdemyMVC5Proje.Models.EntitiFramework;
+@model List<TBLNotlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <td>NOT ID</td>
+        <td>DERS ID</td>
+        <td>ÖĞRENCİ ID</td>
+        <td>VİZE</td>
+        <td>FİNAL</td>
+        <td>PROJE</td>
+        <td>ORTALAMA</td>
+        <td>DURUM</td>
+        <td>İŞLEMLER</td>
+
+    </tr>
+    <tbody>
+        @foreach (var nots in Model)
+        {
+            <tr>
+                <td>@nots.NOTID</td>
+                <td>@nots.DERSID</td>
+                <td>@nots.OGRID</td>
+                <td>@nots.VIZE</td>
+                <td>@nots.FINAL</td>
+                <td>@nots.PROJE</td>
+                <td>@nots.ORTALAMA</td>
+                <td>@nots.DURUM</td>
+                <td>
+
+                    <a href="/Sinavlar/NotGetir/ @nots.NOTID" class="btn btn-primary">Güncelle</a>
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Sinavlar/NotEkle" class="btn btn-info">Yeni Öğrenci Ekle</a>

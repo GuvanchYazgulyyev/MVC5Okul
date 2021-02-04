@@ -1,0 +1,48 @@
+﻿@model UdemyMVC5Proje.Models.EntitiFramework.TBLOgrenci
+@{
+    ViewBag.Title = "OgrEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Ögrenci Adı:</label>
+        <input type="text" class="form-control" name="OGRAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı:</label>
+        <input type="text" class="form-control" name="OGRSOYAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Telefon:</label>
+        <input type="text" class="form-control" name="OGRTEL" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Foto:</label>
+        <input type="text" class="form-control" name="OGRFOTO" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Cinsiyet:</label>
+        @*@Html.DropDownListFor(a => a.OGRCINSIYET, (List<SelectListItem>)ViewBag.dgr2,
+      new
+      {
+          @class = "form-control"
+      })*@
+
+        <input type="text" class="form-control" name="OGRCINSIYET" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Klübü:</label>
+        @Html.DropDownListFor(c=>c.TBLKulup.KULUPID,(List<SelectListItem>)ViewBag.dgr,
+       new
+       {
+           @class="form-control"
+       })
+        @*<input type="text" class="form-control" name="OGRKULUP" />*@
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success">Klübü Kaydet</button>
+    </div>
+</form>
+
+
